@@ -44,8 +44,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>E:\Documents\coding\MSVC++\libcurl\src\RestClient\RESTClientConsoleWin32\3rdParty\inc;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Documents\coding\MSVC++\libcurl\src\RestClient\RESTClientConsoleWin32\3rdParty\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>..\3rdParty\inc;$(IncludePath)</IncludePath>
+    <LibraryPath>..\3rdParty\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -69,7 +69,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;USE_SSLEAY;USE_OPENSSL;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>E:\Documents\coding\MSVC++\libcurl\src\RestClient\RESTClientConsoleWin32\3rdParty\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\3rdParty\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
