@@ -53,6 +53,12 @@ parse_resp_body(const char* body_json, int len)
 	Document document;
 	document.Parse(body_json);
 	assert(document.IsObject());
+
+	//FIXME: it's hardcoded sample 	
+	//the cmdline parameter will be followings:
+	// https://192.168.17.134/mobile/list 
+	// https://192.168.17.134/mobile/list/1
+	// https://192.168.17.134/mobile/list/2 or any other number
 	assert(document.HasMember("1"));
 	assert(document["1"].IsString());
 	printf("the str @location#1 = %s\n", document["1"].GetString());
