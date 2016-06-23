@@ -9,7 +9,10 @@
 #include <sstream>
 #include <assert.h>
 
+#include "rapidjson/document.h"
+
 using namespace std;
+using namespace rapidjson;
 
 struct string2 {
   char *ptr;
@@ -43,10 +46,17 @@ size_t writefunc(void *ptr, size_t size, size_t nmemb, struct string2 *s)
 }
 
 static void
-parse_resp_body(const char* body, int len)
+parse_resp_body(const char* body_json, int len)
 {
 	fprintf(stdout, "parse body ....\n\n");
-	fprintf(stdout, "%s\n", body);
+	//fprintf(stdout, "%s\n", body);
+	Document document;
+	document.Parse(body_json);
+	assert(document.IsObject());
+	assert(document.HasMember("1"));
+	assert(document["1"].IsString());
+	printf("the str @location#1 = %s\n", document["1"].GetString());
+
 	return;
 }
 
